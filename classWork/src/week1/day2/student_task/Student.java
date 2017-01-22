@@ -10,19 +10,20 @@ public class Student {
     private double averageMark;
 
 
-    public Student(String name, String surname, int age){
+    public Student(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+
+    public void setName(String name) {
 //        validation
-        if(name == null || name.isEmpty()) return;
+        if (name == null || name.isEmpty()) return;
         this.name = name;
     }
 
@@ -51,7 +52,7 @@ public class Student {
     }
 
 
-    public String asString(){
+    public String asString() {
         return String.format("Student name - %s, age - %d", name, age);
     }
 }

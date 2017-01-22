@@ -19,11 +19,10 @@ public class Group {
         this.students = new Student[size];
     }
 
-    public Student[] addStudent(String name, String surname, int age){
+    public Student[] addStudent(String name, String surname, int age) {
 
-        if(countStudents < size) {
+        if (countStudents < size) {
             students[countStudents] = new Student(name, surname, age);
-            System.out.println("new student in array " + students[countStudents].asString());
         } else {
             System.out.println("Group is full");
         }
@@ -31,10 +30,22 @@ public class Group {
         return students;
     }
 
-    public void showStudents(){
+    public Student[] deleteStudent(String name, String surname, int age) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getName().equals(name) &&
+                    students[i].getSurname().equals(surname) &&
+                    students[i].getAge() == age) {
+                students[i] = null;
+            }
+        }
+        return students;
+    }
 
-        for(int i=0; i<students.length; i++){
-            System.out.println(students[i].asString());
+    public void showStudents() {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] != null) {
+                System.out.println(students[i].asString());
+            }
         }
         System.out.println("Group name - " + name);
     }

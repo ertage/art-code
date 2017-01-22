@@ -29,8 +29,6 @@ public class Run {
         group.addStudent("Mike", "Smith", 23);
         group.addStudent("Ann", "Smith", 23);
         group.addStudent("Sara", "Smith", 17);
-        group.addStudent("Kate", "Smith", 20);
-
 
         group2.addStudent("Bob", "Smith", 33);
         group2.addStudent("Kate", "Smith", 25);
@@ -39,6 +37,9 @@ public class Run {
         group2.addStudent("Kate", "Smith", 20);
 
         group.showStudents();
+        group.deleteStudent("Kate", "Smith", 25);
+        group.showStudents();
+        group2.showStudents();
 
         Group[] groups = {group, group2};
 
