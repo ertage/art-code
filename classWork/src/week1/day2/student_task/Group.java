@@ -50,6 +50,50 @@ public class Group {
         System.out.println("Group name - " + name);
     }
 
+    public boolean findStudent(String name, String surname, int age) {
+        Student student = new Student(name, surname, age);
+        for (int i = 0; i < students.length; i++) {
+            if ((students[i].getName().equals(name) &&
+                    students[i].getSurname().equals(surname) &&
+                    students[i].getAge() == age)){
+                        student = students[i];
+                         return true;
+            }
+        }
+        System.out.println(student.asString() + " isn't in this group");
+        return false;
+    }
+
+    public Student[] sortStudentsByName(){
+        int  counter = 0;
+        for (int i = 0; i < students.length ; i++) {
+            if(students[i] == null ) {
+                counter ++;
+            }
+        }
+        Student[] array  = new Student[students.length - counter];
+        for (int i = 0; i < students.length ; i++) {
+            if(students[i] != null ) {
+                array[i] = students[i];
+            }
+        }
+        System.out.println();
+        for(int i=0; i<array.length-1; i++){
+            int res = array[i].getName().compareTo(array[i + 1].getName());
+            if (res > 0) {
+                Student tmp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = tmp;
+            }
+
+            System.out.println(array[i].asString());
+        }
+        return array;
+    }
+
+
+
+
     public String getName() {
         return name;
     }
