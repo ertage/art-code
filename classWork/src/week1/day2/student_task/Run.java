@@ -22,34 +22,30 @@ public class Run {
         Group group = new Group("ACO17", 5);
         Group group2 = new Group("ACO18", 6);
 
-        Student[] students = {};
 
-        group.addStudent(students, "Bob", "Smith", 33);
-        System.out.println(Arrays.toString(students));
-        System.out.println("array length = "  + students.length);
-        group.addStudent(students, "Kate", "Smith", 25);
-        System.out.println(Arrays.toString(students));
-        group.addStudent(students,"Mike", "Smith", 23);
-        System.out.println(Arrays.toString(students));
 
-//        group.addStudent("Ann", "Smith", 23);
-//        group.addStudent("Sara", "Smith", 17);
-//        group.addStudent("Kate", "Smith", 20);
+        group.addStudent("Bob", "Smith", 33);
+        group.addStudent("Kate", "Smith", 25);
+        group.addStudent("Mike", "Smith", 23);
+        group.addStudent("Ann", "Smith", 23);
+        group.addStudent("Sara", "Smith", 17);
+        group.addStudent("Kate", "Smith", 20);
 
-//        group2.addStudent("Bob", "Smith", 33);
-//        group2.addStudent("Kate", "Smith", 25);
-//        group2.addStudent("Ann", "Smith", 23);
-//        group2.addStudent("Sara", "Smith", 17);
-//        group2.addStudent("Kate", "Smith", 20);
 
-        //group.showStudents();
+        group2.addStudent("Bob", "Smith", 33);
+        group2.addStudent("Kate", "Smith", 25);
+        group2.addStudent("Ann", "Smith", 23);
+        group2.addStudent("Sara", "Smith", 17);
+        group2.addStudent("Kate", "Smith", 20);
 
-//        Group[] groups = {group, group2};
-//
-//        University university = new University("KNU", groups);
-//        System.out.println("Groups:");
-//        university.showGroups();
-//        System.out.println("Students:");
-        //university.showStudents();
+        group.showStudents();
+
+        Group[] groups = {group, group2};
+
+        University university = new University("KNU", groups);
+        System.out.println("Groups:");
+        university.showGroups();
+        System.out.println("Students:");
+      //  university.showStudents();
     }
 }

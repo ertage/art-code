@@ -18,10 +18,10 @@ public class University {
         }
     }
 
-//    public void showStudents(){
-//        System.out.println("University " + name);
-//        for(int i=0; i<groups.length; i++){
-//            groups[i].showStudents();
-//        }
-//    }
+    public void showStudents(){
+        System.out.println("University " + name);
+        for(int i=0; i<groups.length; i++){
+            groups[i].showStudents();
+        }
+    }
 }

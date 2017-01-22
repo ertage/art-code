@@ -8,32 +8,36 @@ import java.util.Arrays;
  */
 public class Group {
     private String name;
-    private Student[] students;
     private int size;
+    private Student[] students;
+    private int countStudents = 0;
+
 
     public Group(String name, int size) {
         this.name = name;
         this.size = size;
+        this.students = new Student[size];
     }
 
-    public Student[] addStudent(Student[] students, String name, String surname, int age){
-        Student[] newArray = new Student[students.length +1];
-        for(int i=0; i<students.length; i++){
-            newArray[i] = students[i];
+    public Student[] addStudent(String name, String surname, int age){
+
+        if(countStudents < size) {
+            students[countStudents] = new Student(name, surname, age);
+            System.out.println("new student in array " + students[countStudents].asString());
+        } else {
+            System.out.println("Group is full");
         }
-        newArray[newArray.length-1] = new Student(name, surname,age);
-        System.out.println("new student in array " + newArray[newArray.length-1].asString());
-
-        return newArray;
+        countStudents++;
+        return students;
     }
 
-//    public void showStudents(){
-//
-//        for(int i=0; i<students.length; i++){
-//            System.out.println(students[i].asString());
-//        }
-//        System.out.println("Group name - " + name);
-//    }
+    public void showStudents(){
+
+        for(int i=0; i<students.length; i++){
+            System.out.println(students[i].asString());
+        }
+        System.out.println("Group name - " + name);
+    }
 
     public String getName() {
         return name;
