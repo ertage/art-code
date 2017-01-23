@@ -28,5 +28,7 @@ public class Run {
         car3.go();
         car3.turnOnEngine();
         car3.go();
+
+        System.out.println(car1.showCarModel());
     }
 }
