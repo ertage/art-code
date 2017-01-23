@@ -34,7 +34,7 @@ public class Run {
         group2.addStudent("Kate", "Smith", 20);
 
         //group.showStudents();
-        group2.deleteStudent("Sara", "Smith", 17);
+        group2.deleteStudent("Kate", "Smith", 25);
         //group.findStudent("Sara", "Smith", 25);
 
        group2.showStudents();

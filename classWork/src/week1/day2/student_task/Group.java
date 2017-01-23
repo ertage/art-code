@@ -42,7 +42,9 @@ public class Group {
             if(students[i] == null){
                 students[i] = students[i+1];
                 students[i+1] = null;
-                break;
+                if((students[i] == null) && (students[i+1] == null)) {
+                    break;
+                }
             }
             students[i].asString();
         }
