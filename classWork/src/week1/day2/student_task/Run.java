@@ -21,8 +21,6 @@ public class Run {
         Group group = new Group("ACO17", 5);
         Group group2 = new Group("ACO18", 6);
 
-
-
         group.addStudent("Bob", "Smith", 33);
         group.addStudent("Kate", "Smith", 25);
         group.addStudent("Mike", "Smith", 23);
@@ -36,19 +34,20 @@ public class Run {
         group2.addStudent("Kate", "Smith", 20);
 
         //group.showStudents();
-        //group.deleteStudent("Kate", "Smith", 17);
+        group2.deleteStudent("Sara", "Smith", 17);
         //group.findStudent("Sara", "Smith", 25);
 
-        group2.showStudents();
+       group2.showStudents();
+        System.out.println();
         group2.sortStudentsByName();
-        //group2.showStudents();
+        group2.showStudents();
 
         Group[] groups = {group, group2};
 
-        University university = new University("KNU", groups);
-        System.out.println("Groups:");
-        //university.showGroups();
-        System.out.println("Students:");
-      //  university.showStudents();
+//        University university = new University("KNU", groups);
+//        System.out.println("Groups:");
+//        university.showGroups();
+//        System.out.println("Students:");
+//        university.showStudents();
     }
 }

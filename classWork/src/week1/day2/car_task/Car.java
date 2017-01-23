@@ -7,11 +7,13 @@ public class Car {
     private Engine engine;
     private Wheel[] wheels;
     private String model;
+    private int petrol;
 
-    public Car(Engine engine, Wheel[] wheels, String model){
+    public Car(Engine engine, Wheel[] wheels, String model, int petrol){
         this.engine = engine;
         this.wheels = wheels;
         this.model = model;
+        this.petrol = petrol;
     }
 
     public boolean go(){
@@ -20,7 +22,7 @@ public class Car {
             System.out.println("Sorry! You can't go! You should turn on your engine");
             go = false;
         }
-        if(engine.getPetrol() == 0){
+        if(petrol == 0){
             System.out.println("Sorry! You can't go! You don't have petrol enough. You should get some petrol");
             go = false;
         }
@@ -34,8 +36,8 @@ public class Car {
         return  go;
     }
 
-    public void getPetrol(int petrol){
-        engine.setPetrol(petrol);
+    public void setPetrol(int petrol){
+        this.petrol = petrol;
     }
     public void turnOnEngine(){
         engine.setState(true);
