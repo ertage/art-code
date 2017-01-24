@@ -5,20 +5,21 @@ package week1.day2.flowers;
  */
 public class Run {
     public static void main(String arg[]){
-        Flower flower1 = new Flower(15, "Rose2", 100, "Low");
-        Flower flower2 = new Flower(16, "Сhamomel2", 80,  "Low");
-        Flower flower3 = new Flower(18, "Rose1", 200, "Hight");
-        Flower flower4 = new Flower(20, "Сhamomel1", 180, "Hight");
-        Flower flower5 = new Flower(15, "Rose", 140, "Medium");
+        Flower rose1 = new Rose(15, "Rose", 100, 2);
+        Flower rose2 = new Rose(15, "Rose", 100, 2);
+        Flower tulip = new Tulip(16, "Tulip", 80,  5);
+        Flower lily1 = new Lily(18, "Lily", 200, 4);
+        Flower lily2 = new Lily(20, "Lily", 180, 3);
 
-        Flower[] flowers = {flower1, flower2, flower3, flower4, flower5};
+        Flower[] flowers = {rose1, rose2, tulip, lily1, lily2};
 
         Bouquet bouquet = new Bouquet(flowers);
         bouquet.showFlowers();
 
         bouquet.printPrice();
+        System.out.println();
         bouquet.sortFlowersByFreshness();
         bouquet.showFlowers();
-        bouquet.findFlower(15);
+        //bouquet.findFlower(15);
     }
 }

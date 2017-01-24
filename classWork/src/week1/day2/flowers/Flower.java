@@ -7,11 +7,9 @@ public class Flower {
     private int lenghtStalk;
     private String name;
     private int price;
-    private String freshnessLevel;
+    private int freshnessLevel;
 
-    public  Flower(){};
-
-    public Flower(int lenghtStalk, String name, int price, String freshnessLevel){
+    public Flower(int lenghtStalk, String name, int price, int freshnessLevel){
         this.lenghtStalk = lenghtStalk;
         this.name = name;
         this.price = price;
@@ -34,7 +32,7 @@ public class Flower {
         return name;
     }
 
-    public String getFreshnessLevel() {
+    public int getFreshnessLevel() {
         return freshnessLevel;
     }
 }
