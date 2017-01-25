@@ -1,4 +1,8 @@
-package interface_task;
+package interface_task.books.books;
+
+import interface_task.books.books.Encyclopedia;
+import interface_task.books.books.Manual;
+import interface_task.books.books.Printable;
 
 /**
  * Created by Nastia on 24.01.17.
