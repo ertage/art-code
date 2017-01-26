@@ -1,6 +1,6 @@
-package interface_task.books.books;
+package interface_task.books;
 
-import interface_task.books.books.Book;
+import interface_task.books.Book;
 
 /**
  * Created by Nastia on 24.01.17.

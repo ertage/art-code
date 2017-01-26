@@ -1,4 +1,4 @@
-package interface_task.books.books;
+package interface_task.books;
 
 /**
  * Created by Nastia on 24.01.17.

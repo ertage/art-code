@@ -51,8 +51,18 @@ public class Student {
         this.averageMark = averageMark;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof Student)) return false;
+        Student tmp = (Student) obj;
+        return (this.name.equals(tmp.name) && (this.surname.equals(tmp.surname)) && (this.age == tmp.age)) ;
 
-    public String asString() {
+    }
+
+    @Override
+    public String toString() {
         return String.format("Student name - %s, age - %d", name, age);
     }
 }
