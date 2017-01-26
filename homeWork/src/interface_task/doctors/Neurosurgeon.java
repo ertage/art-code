@@ -1,4 +1,4 @@
-package interface_task.books.doctors;
+package interface_task.doctors;
 
 /**
  * Created by anastasiia.shvetsova on 1/25/2017.
