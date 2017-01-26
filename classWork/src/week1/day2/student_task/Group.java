@@ -20,19 +20,17 @@ public class Group {
     }
 
     public Student[] addStudent(Student student) {
-        System.out.println(Arrays.toString(students));
         if (countStudents == size) {
             System.out.println("Group is full");
         }
 
         if (findStudent(student)) {
             System.out.println(student.toString() + " student is alredy in group");
+            return students;
         }
 
         students[countStudents] = student;
         countStudents++;
-        System.out.println(students[countStudents].toString() + " added in group");
-
 
         return students;
     }
@@ -64,7 +62,7 @@ public class Group {
 
     public boolean findStudent(Student student) {
         if (student == null) return false;
-        for (int i = 0; i < students.length; i++) {
+        for (int i = 0; i < countStudents; i++) {
             if (students[i].equals(student)) {
                 return true;
             }
@@ -83,7 +81,10 @@ public class Group {
         }
 
     }
-
+    @Override
+    public String toString() {
+        return String.format("Group name - %s", name);
+    }
 
     public String getName() {
         return name;

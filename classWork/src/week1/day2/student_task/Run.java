@@ -20,18 +20,18 @@ public class Run {
         Group group2 = new Group("ACO18", 6);
 
         group.addStudent(student1);
-        group.addStudent(student2);
+        group.addStudent(student1);
         group.addStudent(student6);
         group.addStudent(student4);
         group.addStudent(student5);
 
         group.showStudents();
 
-//        group2.addStudent(student5);
-//        group2.addStudent(student6);
-//        group2.addStudent(student7);
-//        group2.addStudent(student8);
-//        group2.addStudent(student1);
+        group2.addStudent(student5);
+        group2.addStudent(student6);
+        group2.addStudent(student7);
+        group2.addStudent(student8);
+        group2.addStudent(student1);
 //        group.showStudents();
 //        group2.deleteStudent("Kate", "Smith", 25);
 //        group.findStudent("Sara", "Smith", 25);
@@ -41,12 +41,15 @@ public class Run {
 //        group2.sortStudentsByName();
 //        group2.showStudents();
 //
-//        Group[] groups = {group, group2};
+       Group[] groups = {group, group2};
 
-//        University university = new University("KNU", groups);
-//        System.out.println("Groups:");
-//        university.showGroups();
-//        System.out.println("Students:");
-//        university.showStudents();
+        University university = new University("KNU",3);
+        System.out.println("Groups:");
+        university.showGroups();
+
+        university.addGroup(group);
+        university.addGroup(group2);
+        university.addGroup(group);
+        university.showGroups();
     }
 }
