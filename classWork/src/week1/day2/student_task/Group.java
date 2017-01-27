@@ -70,17 +70,33 @@ public class Group {
         return false;
     }
 
-    public void sortStudentsByName() {
-        for (int i = 0; i < countStudents - 1; i++) {
-            int res = students[i].getName().compareTo(students[i + 1].getName());
-            if (res > 0) {
-                Student tmp = students[i];
-                students[i] = students[i + 1];
-                students[i + 1] = tmp;
+//    public void sortStudentsByName() {
+//        for (int i = 0; i < countStudents - 1; i++) {
+//            int res = students[i].getName().compareTo(students[i + 1].getName());
+//            if (res > 0) {
+//                Student tmp = students[i];
+//                students[i] = students[i + 1];
+//                students[i + 1] = tmp;
+//            }
+//        }
+//
+//    }
+
+
+    //sort with compareTo()
+    public void sortStudentsByName(){
+        for (int i = 0; i < countStudents; i++) {
+            for(int  j = countStudents - 1; j>i; j--) {
+                int res = students[j-1].compareTo(students[j]);
+                if (res > 0) {
+                    Student tmp = students[j-1];
+                    students[j-1] = students[j];
+                    students[j] = tmp;
+                }
             }
         }
-
     }
+
     @Override
     public String toString() {
         return String.format("Group name - %s", name);

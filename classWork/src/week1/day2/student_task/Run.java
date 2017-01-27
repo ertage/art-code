@@ -26,6 +26,11 @@ public class Run {
         group.addStudent(student5);
 
         group.showStudents();
+        group.sortStudentsByName();
+        System.out.println();
+        System.out.println("Sorted");
+        group.showStudents();
+
 
         group2.addStudent(student5);
         group2.addStudent(student6);
@@ -41,15 +46,13 @@ public class Run {
 //        group2.sortStudentsByName();
 //        group2.showStudents();
 //
-       Group[] groups = {group, group2};
-
-        University university = new University("KNU",3);
-        System.out.println("Groups:");
-        university.showGroups();
-
-        university.addGroup(group);
-        university.addGroup(group2);
-        university.addGroup(group);
-        university.showGroups();
+//       Group[] groups = {group, group2};
+//
+//        University university = new University("KNU",3);
+//
+//        university.addGroup(group);
+//        university.addGroup(group2);
+//        university.addGroup(group);
+//        university.showGroups();
     }
 }

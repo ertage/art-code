@@ -3,7 +3,7 @@ package week1.day2.student_task;
 /**
  * Created by gorobec on 21.01.17.
  */
-public class Student {
+public class Student implements Comparable{
     private String name;
     private String surname;
     private int age;
@@ -64,5 +64,15 @@ public class Student {
     @Override
     public String toString() {
         return String.format("Student name - %s, age - %d", name, age);
+    }
+
+    @Override
+    public  int compareTo(Object obj){
+        Student tmp = (Student) obj;
+        int result = this.name.compareTo(tmp.name);
+        if(result != 0){
+            return  result;
+        }
+        return  0;
     }
 }
