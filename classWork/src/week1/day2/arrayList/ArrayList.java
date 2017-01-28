@@ -36,20 +36,73 @@ public class ArrayList {
         size++;
     }
 
-
+    public boolean isIndex(int index) {
+        if ((index < 0 || index >= objects.length)) return false;
+        return true;
+    }
 
     public Object get(int index) {
-        if (index > 0 || index < objects.length)
-            return objects[index];
+        if (!isIndex(index)) return false;
+        return objects[index];
+    }
+
+    public Object remove(int index) {
+        if (!isIndex(index)) return false;
+        int numMoved = objects.length - index - 1;
+        System.arraycopy(objects, index + 1, objects, index, numMoved);
+        objects[--size] = null;
+        return objects[index];
+    }
+
+    public Object remove(Object object) {
+        int index = 0;
+        if (object == null) {
+            for (int i = 0; i < objects.length; i++)
+                if (objects[i] == null) {
+                    remove(i);
+                    return objects[i];
+                }
+        }
+
+        for (int i = 0; i < objects.length; i++) {
+            if (objects[i].equals(object)) {
+                index = i;
+                remove(i);
+            }
+        }
+
+        return objects[index];
+    }
+
+    public Object set(int index, Object object) {
+        if (!isIndex(index)) return false;
+        return objects[index] = object;
+    }
+
+    public void clear() {
+        for (int i = 0; i < objects.length; i++){
+            objects[i] = null;
+        }
+        size = 0;
+    }
+
+    public boolean contains(Object object){
+        for (int i = 0; i < objects.length; i++){
+            if (objects[i].equals(object)) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public Object remove(int index){
-        if ((index < 0 || index >= objects.length)) return false;
-        int numMoved = objects.length - index - 1;
-        System.arraycopy(objects, index + 1, objects, index, numMoved);
-        objects[--size]=null;
-        return objects[index];
+    public int size(){
+        int count = 0;
+        for (int i = 0; i < objects.length; i++) {
+            if(objects[i] != null){
+                count++;
+            }
+        }
+        return count;
     }
 
 }
