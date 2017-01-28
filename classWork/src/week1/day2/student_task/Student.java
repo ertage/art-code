@@ -75,10 +75,6 @@ public class Student implements Comparable {
     @Override
     public int compareTo(Object obj) {
         Student tmp = (Student) obj;
-        int result = this.name.compareTo(tmp.name);
-        if (result != 0) {
-            return result;
-        }
-        return 0;
+        return this.name.compareTo(tmp.name);
     }
 }

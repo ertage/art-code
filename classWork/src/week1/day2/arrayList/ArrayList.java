@@ -1,5 +1,6 @@
 package week1.day2.arrayList;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -9,23 +10,26 @@ public class ArrayList {
     private int size;
     private Object[] objects;
 
-    public ArrayList(Object[] objects) {
-        this.objects = objects;
+    public ArrayList(int size){
+        this.size = size;
+        this.objects = new Object[size];
     }
+
 
     public boolean add(Object object) {
         ensureCapacity(size + 1);
-        objects[size + 1] = object;
+        objects[size] = object;
+        size++;
         return true;
     }
 
     public void ensureCapacity(int minEnsureCapacity) {
 
         int arraylength = objects.length;
-        if (minEnsureCapacity < arraylength) {
-            Object[] tmp = new Object[arraylength];
-            System.arraycopy(objects, 0, tmp, 0, arraylength);
-            objects = new Object[arraylength];
+        if (minEnsureCapacity > arraylength) {
+            Object[] tmp = new Object[minEnsureCapacity];
+            System.arraycopy(objects, 0, tmp, 0, size);
+            objects = new Object[minEnsureCapacity];
             objects = tmp;
         }
     }
@@ -65,9 +69,11 @@ public class ArrayList {
         }
 
         for (int i = 0; i < objects.length; i++) {
-            if (objects[i].equals(object)) {
-                index = i;
-                remove(i);
+            if(objects[i] != null) {
+                if (objects[i].equals(object)) {
+                    index = i;
+                    remove(i);
+                }
             }
         }
 
@@ -87,9 +93,18 @@ public class ArrayList {
     }
 
     public boolean contains(Object object){
+        if (object == null) {
+            for (int i = 0; i < objects.length; i++)
+                if (objects[i] == null) {
+
+                    return true;
+                }
+        }
         for (int i = 0; i < objects.length; i++){
-            if (objects[i].equals(object)) {
-                return true;
+            if(objects[i] != null) {
+                if (objects[i].equals(object)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -103,6 +118,10 @@ public class ArrayList {
             }
         }
         return count;
+    }
+
+    public void printList(){
+        System.out.println(Arrays.toString(objects));
     }
 
 }
