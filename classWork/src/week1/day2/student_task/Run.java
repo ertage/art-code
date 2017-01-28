@@ -7,17 +7,19 @@ import java.util.Arrays;
  */
 public class Run {
     public static void main(String[] args) {
-        Student student1 = new Student("John", "Smith", 35);
+        Student student1 = new Student("John", "Adams", 35, 4.8);
         Student student2 = new Student("Jack", "Smith", 25);
-        Student student3 = new Student("Sara", "Smith", 15);
-        Student student4 = new Student("Ann", "Smith", 45);
-        Student student5 = new Student("Mike", "Smith", 55);
-        Student student6 = new Student("Bill", "Smith", 17);
-        Student student7 = new Student("Kate", "Smith", 23);
-        Student student8 = new Student("Bob", "Smith", 33);
+        Student student3 = new Student("Sara", "Belli", 15);
+        Student student4 = new Student("Ann", "Doodow", 45, 5.0);
+        Student student5 = new Student("Mike", "Petrov", 55, 3.2);
+        Student student6 = new Student("Bill", "Richy", 17, 4.4);
+        Student student7 = new Student("Kate", "Solo", 23);
+        Student student8 = new Student("Bob", "Ivanow", 33);
 
         Group group = new Group("ACO17", 5);
         Group group2 = new Group("ACO18", 6);
+
+
 
         group.addStudent(student1);
         group.addStudent(student1);
@@ -26,11 +28,21 @@ public class Run {
         group.addStudent(student5);
 
         group.showStudents();
-        group.sortStudentsByName();
-        System.out.println();
-        System.out.println("Sorted");
-        group.showStudents();
 
+
+        group.sortComparator(new ComparatorByAge());
+
+        System.out.println();
+        System.out.println("Sorted by Age");
+        group.showStudents();
+        System.out.println();
+        System.out.println("Sorted by Surname");
+        group.sortComparator(new ComparatorBySurname());
+        group.showStudents();
+        System.out.println();
+        System.out.println("Sorted by average mark");
+        group.sortComparator(new ComparatorByMark());
+        group.showStudents();
 
         group2.addStudent(student5);
         group2.addStudent(student6);

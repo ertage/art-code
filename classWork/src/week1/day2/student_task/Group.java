@@ -2,6 +2,7 @@ package week1.day2.student_task;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by gorobec on 22.01.17.
@@ -88,6 +89,19 @@ public class Group {
         for (int i = 0; i < countStudents; i++) {
             for(int  j = countStudents - 1; j>i; j--) {
                 int res = students[j-1].compareTo(students[j]);
+                if (res > 0) {
+                    Student tmp = students[j-1];
+                    students[j-1] = students[j];
+                    students[j] = tmp;
+                }
+            }
+        }
+    }
+
+    public void sortComparator(Comparator comparator){
+        for (int i = 0; i < countStudents; i++) {
+            for(int  j = countStudents - 1; j>i; j--) {
+                int res = comparator.compare(students[j-1],(students[j]));
                 if (res > 0) {
                     Student tmp = students[j-1];
                     students[j-1] = students[j];
