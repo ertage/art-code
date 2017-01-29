@@ -1,4 +1,4 @@
-package week1.day2.arrayList;
+package data_structures;
 //import java.util.MyArrayList;
 
 /**
@@ -6,7 +6,7 @@ package week1.day2.arrayList;
  */
 public class Run {
     public static void main(String[] args) {
-        ArrayList colors = new ArrayList(5);
+        MyArrayList colors = new MyArrayList(5);
 
         colors.add("red");
         colors.add("black");

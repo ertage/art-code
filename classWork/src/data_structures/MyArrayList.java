@@ -1,20 +1,20 @@
-package week1.day2.arrayList;
+package data_structures;
 
 import java.util.Arrays;
 
 /**
  * Created by Nastia on 28.01.17.
  */
-public class ArrayList {
+public class MyArrayList {
     private int size = 0;
     private Object[] objects;
     public static  final int DEFAULT_SIZE = 10;
 
-    public ArrayList(int size){
+    public MyArrayList(int size){
         this.objects = new Object[size];
     }
 
-    public ArrayList(){
+    public MyArrayList(){
         this(DEFAULT_SIZE);
     }
 
