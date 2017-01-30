@@ -45,18 +45,17 @@ public class ArrayList {
         size++;
     }
 
-    public boolean isIndex(int index) {
-        if ((index < 0 || index >= objects.length)) return false;
-        return true;
+    public boolean wrongIndex(int index) {
+        return index < 0 || index >= objects.length;
     }
 
     public Object get(int index) {
-        if (!isIndex(index)) return false;
+        if (wrongIndex(index)) return false;
         return objects[index];
     }
 
     public boolean remove(int index) {
-        if (!isIndex(index)) return false;
+        if (wrongIndex(index)) return false;
         int numMoved = objects.length - index - 1;
         System.arraycopy(objects, index + 1, objects, index, numMoved);
         objects[--size] = null;
@@ -84,7 +83,7 @@ public class ArrayList {
     }
 
     public Object set(int index, Object object) {
-        if (!isIndex(index)) return false;
+        if (wrongIndex(index)) return false;
         return objects[index] = object;
     }
 
