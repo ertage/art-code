@@ -32,13 +32,77 @@ public class MyArrayListTest {
         assertEquals(4, list.size());
     }
 
+    //@Test
+    /*public void testAddByIndex(){
+        assertTrue(list.add(0,2));
+        assertTrue(list.add(1,6));
+    }*/
     @Test
-    public void testRemoveByObject(){
-        list.add("12");
-        list.add("13");
-        int old = list.size();
-        list.remove(1);
-        assertEquals(old - 1, list.size());
+    public void testWrongIndex(){
+        list.add("black");
+        list.add("white");
+        assertTrue(list.wrongIndex(1));
     }
 
+    @Test
+    public void testGet(){
+        list.add("black");
+        list.add("white");
+        assertEquals("white", list.get(1));
+    }
+
+    @Test
+    public void testRemoveByIndex(){
+        list.add("12");
+        list.add("13");
+        int oldSize = list.size();
+        assertTrue(list.remove(1));
+        assertEquals(oldSize - 1, list.size());
+    }
+
+    @Test
+    public void testRemoveByObject(){
+        list.add("black");
+        list.add("white");
+        assertTrue(list.remove("black"));
+    }
+
+    @Test
+    public void testSet(){
+        list.add("black");
+        list.add("white");
+        list.add("blue");
+        list.add("red");
+        assertEquals("pink", list.set(1, "pink"));
+        assertEquals("grey", list.set(2, "grey"));
+        assertEquals("green", list.set(3, "green"));
+    }
+
+    @Test
+    public  void testContains(){
+        list.add("black");
+        list.add("white");
+        list.add("blue");
+        list.add("red");
+        assertTrue(list.contains("blue"));
+    }
+
+    @Test
+    public  void testSize(){
+        list.add("black");
+        list.add("white");
+        list.add("blue");
+        list.add("red");
+        assertEquals(4,list.size());
+    }
+
+    @Test
+    public  void testIsEmpty(){
+        list.add("black");
+        list.add("white");
+        list.add("blue");
+        list.add("red");
+        int size = list.size();
+        assertTrue(list.isEmpty());
+    }
 }

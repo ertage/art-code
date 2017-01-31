@@ -14,7 +14,7 @@ public class Run {
         colors.add("yellow");
         colors.printList();
 
-        colors.add(1,"orange");
+        colors.add(5,"orange");
         colors.printList();
         System.out.println(colors.get(5));
         colors.remove(2);

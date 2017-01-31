@@ -21,6 +21,7 @@ public class ArrayList {
     }
 
     public boolean add(Object object) {
+
         ensureCapacity(size +  objects.length*(3/2) +1);
         objects[size] = object;
         size++;
@@ -40,7 +41,10 @@ public class ArrayList {
     }
 
     public void add(int index, Object object) {
-        ensureCapacity(size +  objects.length*(3/2) +1);
+        if (index > size || index < 0){
+            throw new IllegalArgumentException("index error");
+        }
+            ensureCapacity(size +  objects.length*(3/2) +1);
         objects[index] = object;
         size++;
     }
