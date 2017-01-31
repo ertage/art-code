@@ -8,13 +8,13 @@ import java.util.Arrays;
 public class MyArrayList {
     private int size = 0;
     private Object[] objects;
-    public static  final int DEFAULT_SIZE = 10;
+    public static final int DEFAULT_SIZE = 10;
 
-    public MyArrayList(int size){
+    public MyArrayList(int size) {
         this.objects = new Object[size];
     }
 
-    public MyArrayList(){
+    public MyArrayList() {
         this(DEFAULT_SIZE);
     }
 
@@ -43,59 +43,57 @@ public class MyArrayList {
         size++;
     }
 
-    public boolean isIndex(int index) {
-        if ((index < 0 || index >= objects.length)) return false;
-        return true;
+    public boolean wrongIndex(int index) {
+        return index < 0 || index >= objects.length;
     }
 
     public Object get(int index) {
-        if (!isIndex(index)) return false;
+        if (wrongIndex(index)) return false;
         return objects[index];
     }
 
-    public Object remove(int index) {
-        if (!isIndex(index)) return false;
+    public boolean remove(int index) {
+        if (wrongIndex(index)) return false;
         int numMoved = objects.length - index - 1;
         System.arraycopy(objects, index + 1, objects, index, numMoved);
         objects[--size] = null;
-        return objects[index];
+        return true;
     }
 
-    public Object remove(Object object) {
-        int index = 0;
+    public boolean remove(Object object) {
         if (object == null) {
             for (int i = 0; i < objects.length; i++)
                 if (objects[i] == null) {
                     remove(i);
-                    return objects[i];
+                    return true;
                 }
         }
 
         for (int i = 0; i < objects.length; i++) {
-            if(objects[i] != null) {
+            if (objects[i] != null) {
                 if (objects[i].equals(object)) {
-                    index = i;
                     remove(i);
+                    return true;
                 }
             }
         }
-
-        return objects[index];
+        return false;
     }
 
-    public Object set(int index, Object object) {
-        if (!isIndex(index)) return false;
-        return objects[index] = object;
+    public boolean set(int index, Object object) {
+        if (wrongIndex(index)) return false;
+        objects[index] = object;
+        return true;
     }
 
     public void clear() {
-        for (int i = 0; i < objects.length; i++){
+        for (int i = 0; i < objects.length; i++) {
             objects[i] = null;
         }
         size = 0;
     }
 
-    public boolean contains(Object object){
+    public boolean contains(Object object) {
         if (object == null) {
             for (int i = 0; i < objects.length; i++)
                 if (objects[i] == null) {
@@ -103,8 +101,8 @@ public class MyArrayList {
                     return true;
                 }
         }
-        for (int i = 0; i < objects.length; i++){
-            if(objects[i] != null) {
+        for (int i = 0; i < objects.length; i++) {
+            if (objects[i] != null) {
                 if (objects[i].equals(object)) {
                     return true;
                 }
@@ -113,21 +111,15 @@ public class MyArrayList {
         return false;
     }
 
-    public int size(){
-        int count = 0;
-        for (int i = 0; i < objects.length; i++) {
-            if(objects[i] != null){
-                count++;
-            }
-        }
-        return count;
+    public int size() {
+        return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public void printList(){
+    public void printList() {
         System.out.println(Arrays.toString(objects));
     }
 

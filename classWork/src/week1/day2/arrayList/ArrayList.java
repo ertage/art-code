@@ -21,7 +21,7 @@ public class ArrayList {
     }
 
     public boolean add(Object object) {
-        ensureCapacity(size + 1);
+        ensureCapacity(size +  objects.length*(3/2) +1);
         objects[size] = object;
         size++;
         return true;
@@ -40,7 +40,7 @@ public class ArrayList {
     }
 
     public void add(int index, Object object) {
-        ensureCapacity(size + 1);
+        ensureCapacity(size +  objects.length*(3/2) +1);
         objects[index] = object;
         size++;
     }
